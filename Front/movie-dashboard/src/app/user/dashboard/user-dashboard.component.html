@@ -1,0 +1,25 @@
+<div class="user-dashboard">
+    <h2>Movie List</h2>
+    <app-search-bar (search)="movies = $event"></app-search-bar>
+
+    <p *ngIf="message">{{ message }}</p>
+
+    <div class="movie-list">
+        <div class="movie" *ngFor="let movie of movies" (click)="movie.id && viewDetails(movie.id)">
+            <img [src]="movie.posterUrl" alt="{{ movie.title }}" width="100" />
+            <p>{{ movie.title }} ({{ movie.year }})</p>
+        </div>
+    </div>
+</div>
+
+<div class="pagination-buttons" style="margin-top: 20px; display: flex; gap: 10px;">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 0">
+        Previous
+    </button>
+
+    <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+
+    <button (click)="goToNextPage()" [disabled]="!hasMoreMovies">
+        Next
+    </button>
+</div>

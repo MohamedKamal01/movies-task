@@ -1,0 +1,27 @@
+<div *ngIf="movie; else errorTemplate" class="movie-details">
+    <h2>{{ movie.title }} ({{ movie.year }})</h2>
+    <img [src]="movie.posterUrl" alt="{{ movie.title }}" />
+    <p><strong>IMDB ID:</strong> {{ movie.imdbId }}</p>
+    <p><strong>Year:</strong> {{movie.year}}</p>
+    <p><strong>Type:</strong> {{movie.type}}</p>
+    <p *ngIf="movie.averageRating">
+        Average Rating: {{ movie.averageRating }} ({{ movie.ratingsCount }} ratings)
+    </p>
+
+    <p><strong>Your Rating:</strong>
+        <ng-container *ngFor="let star of [1,2,3,4,5]; let i = index">
+            <span class="star" [class.filled]="userRating && star <= userRating" (click)="setRating(star)">
+                ★
+            </span>
+        </ng-container>
+    </p>
+    <!--Average-->
+    <div class="average-rating" *ngIf="averageRating">
+        <p><strong>Average Users Rating: </strong>{{ averageRating }} / 5 ⭐</p>
+    </div>
+
+</div>
+
+<ng-template #errorTemplate>
+    <p>{{ message }}</p>
+</ng-template>

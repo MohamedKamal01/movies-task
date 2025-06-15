@@ -1,0 +1,41 @@
+<h2 style="font-family: Arial, sans-serif; color: #004d99; margin-top: 20px;">
+    Movie List (Admin)
+</h2>
+
+<!-- Movies from DB -->
+<table>
+    <thead>
+        <tr>
+            <th><input type="checkbox" [(ngModel)]="checkAllDeleted" (change)="toggleAllSelection($event)" /></th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let movie of movies">
+            <td><input type="checkbox" [(ngModel)]="selection[movie.id]" /></td>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            <td>
+                <button (click)="deleteMovie(movie.id)" title="Delete this movie">
+                    🗑️ Delete
+                </button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button (click)="batchDelete()">Delete Selected</button>
+<div class="pagination-buttons" style="margin-top: 20px; display: flex; gap: 10px;justify-content: center;">
+    <button (click)="goToPreviousPage()" [disabled]="currentPage === 0">
+        Previous
+    </button>
+
+    <span>Page {{ currentPage + 1 }} of {{ totalPages }}</span>
+
+    <button (click)="goToNextPage()" [disabled]="!hasMoreMovies">
+        Next
+    </button>
+</div>

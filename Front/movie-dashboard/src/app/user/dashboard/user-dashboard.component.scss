@@ -1,0 +1,82 @@
+.user-dashboard {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-dashboard h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.movie {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.movie img {
+    border-radius: 6px;
+    margin-bottom: 10px;
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.movie p {
+    font-weight: 600;
+    color: #222;
+    font-size: 14px;
+    margin: 0;
+}
+
+.pagination-buttons {
+    max-width: 900px;
+    margin: 30px auto 50px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.pagination-buttons button {
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-buttons button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.pagination-buttons button:hover:not(:disabled) {
+    background-color: #1565c0;
+}
+
+.pagination-buttons span {
+    align-self: center;
+    font-weight: 600;
+    color: #444;
+}
