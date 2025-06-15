@@ -1,27 +1,85 @@
-# MovieDashboard
+## Front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+src/app/
+├── auth/
+│   ├── login/
+│   └── register/
+│
+├── admin/
+│   ├── dashboard/
+│   ├── movie-list/
+│   └── movie-search/
+│
+├── user/
+│   ├── dashboard/
+│   ├── movie-details/
+│   └── search-bar/
+│
+├── services/
+│   ├── auth.service.ts
+│   ├── movie.service.ts
+│   └── token.service.ts
+│   └── loader.service.ts
+│   └── toast.service.ts
+│
+├── guards/
+│   └── auth.guard.ts
+│
+├── interceptors/
+│   └── auth.interceptor.ts
+│
+├── models/
+│   ├── user.ts
+│   └── movie.ts
+│   └── rating.ts
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Back
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+main/java/com.fawrytask.movies
+├── config/
+│   └── WebConfig
+│   
+│
+├── controller/
+│   ├── AuthController
+│   ├── MovieController
+│   └── RatingController
+│
+├── model/
+│   ├── CustomUserDetails
+│   ├── Movie
+│   ├── Rating
+│   ├── Role
+│   └── User
+│
+├── repository/
+│   ├── MovieRepository
+│   ├── RatingRepository
+│   └── UserRepository
+|
+├── security/
+│   ├── CustomUserDetailsService
+│   ├── JwtAuthenticationFilter
+│   ├── JwtUtil
+│   └── SecurityConfig
+|
+└── MoviesApplication
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## To Run Front 
+-- npm install
+-- ng serve --proxy-config proxy.conf.json
+## To Run Back
+-- build and run
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
