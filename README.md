@@ -74,7 +74,8 @@ main/java/com.fawrytask.movies
 ## To Run Back
 -- build and run
 
-
+## Very important in MySql
+CREATE DATABASE fawry_db;
 
 
 
